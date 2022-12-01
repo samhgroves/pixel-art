@@ -1,0 +1,10 @@
+.container {
+    width: 90%;
+    height: 200px;
+    border: solid black 3px;
+}
+.box {
+    width: 10px;
+    height: 10px;
+    border: solid black 3px;
+}
