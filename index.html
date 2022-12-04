@@ -4,13 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>HTML 5 Boilerplate</title>
+    <title>Pixel Art Maker</title>
     <link rel="stylesheet" href="style.css">
     <script src="script.js" defer></script>
   </head>
   <body>
-    <div class="container">
-
+    <h1>Pixel Art Maker</h1>
+    <div class="container"></div>
+    <div class="slidercontainer">
+      <input type="range" min="2" max="100" value="16" class="slider" id="myRange">
+      <h3 id="sliderValue"></h3>
     </div>
+    <label for="colorpicker">Color Picker:</label>
+   <input type="color" id="colorpicker" value="#000000">
   </body>
 </html>

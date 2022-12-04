@@ -1,10 +1,30 @@
+:root {
+    --gridSize: 0;
+}
+
 .container {
-    width: 90%;
-    height: 200px;
-    border: solid black 3px;
+    display: grid;
+    justify-content: center;
+    grid-gap: 0em;
+    grid-template-columns: repeat(var(--gridSize), 1fr);
+    grid-template-columns: repeat(var(--gridSize), 1fr);
+    aspect-ratio: 1 / 1;
+    max-width: 800px;
+    margin: auto;
+    border: solid black 1px;
 }
+
 .box {
-    width: 10px;
-    height: 10px;
-    border: solid black 3px;
+    padding: 0em;
+    border: solid black 0px;
+    text-align: center;
 }
+
+.slider {
+    max-width: 500px;
+    height: 15px;
+    border-radius: 5px;  
+    background: #d3d3d3;
+    outline: none;
+    opacity: 0.7;
+  }
