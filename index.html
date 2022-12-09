@@ -7,15 +7,30 @@
     <title>Pixel Art Maker</title>
     <link rel="stylesheet" href="style.css">
     <script src="script.js" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
   </head>
   <body>
     <h1>Pixel Art Maker</h1>
-    <div class="container"></div>
-    <div class="slidercontainer">
-      <input type="range" min="2" max="100" value="16" class="slider" id="myRange">
-      <h3 id="sliderValue"></h3>
+    <div class="art">
+      <div class="container"></div>
     </div>
-    <label for="colorpicker">Color Picker:</label>
-   <input type="color" id="colorpicker" value="#000000">
+    <div class="options">
+      <h2>Options</h2>
+      <div class="colorcontainer">
+      <input type="color" id="colorpicker" value="#30D5C8">
+      </div>
+      <div class="buttons">
+        <button id="color" type="button" class="active">Color</button>
+        <button id="eraser" type="button">Eraser</button>
+        <button id="highlight" type="button">Highlight</button>
+        <button id="shade" type="button">Shade</button>
+        <button id="reset" type="button">Reset</button>
+      </div>
+      <h3>Grid Size</h3>
+      <div class="slidercontainer">
+        <input type="range" min="2" max="50" value="16" class="slider" id="myRange">
+        <h3 class="slabel" id="sliderValue"></h3>
+      </div>
+    </div>
   </body>
 </html>
