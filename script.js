@@ -20,18 +20,37 @@ function makeGrid(gridSize) {
 }
 makeGrid(gridSize);
 
-//Listen for mouse drag or click
+// Listen for mouse drag or touchmove
+let isTouchDevice = "ontouchstart" in window;
 window.mouseDown = false;
-document.onmousedown = function () {
-  window.mouseDown = true;
-};
 
-document.onmouseup = function () {
-  window.mouseDown = false;
-};
+if (isTouchDevice) {
+  container.addEventListener("touchstart", function (e) {
+    e.preventDefault();
+    window.mouseDown = true;
+  });
 
-document.addEventListener("mouseover", handler, false);
-document.addEventListener("mousedown", handler, false);
+  container.addEventListener("touchend", function (e) {
+    e.preventDefault();
+    window.mouseDown = false;
+  });
+
+  container.addEventListener("touchmove", function (e) {
+    e.preventDefault();
+    handler(e.touches[0]);
+  });
+} else {
+  document.onmousedown = function () {
+    window.mouseDown = true;
+  };
+
+  document.onmouseup = function () {
+    window.mouseDown = false;
+  };
+
+  document.addEventListener("mouseover", handler, false);
+  document.addEventListener("mousedown", handler, false);
+}
 function handler(e) {
   const target = e.target.closest(".box");
   if (window.mouseDown == true) {
