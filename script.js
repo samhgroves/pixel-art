@@ -53,11 +53,10 @@ if (isTouchDevice) {
 }
 function handler(e) {
   const target = e.target.closest(".box");
-  if (window.mouseDown == true) {
+  if (window.mouseDown == true || isTouchDevice) {
     if (target) {
       let style = getComputedStyle(target);
       let brightness = style.filter;
-      console.log(brightness);
       if (highlight.classList.contains("active")) {
         if (brightness == "brightness(0)") {
           target.style.filter = "brightness(0.1)";
